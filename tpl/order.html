@@ -1,0 +1,110 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" type="text/html;charset=utf-8"/>
+		<link rel="stylesheet" type="text/css" href="data/bootstrap/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="data/bootstrap/css/bootstrap-theme.css"/>
+		<link rel="stylesheet" type="text/css" href="data/css/order.css"/>
+		<script type="text/javascript" src="data/bootstrap/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="data/bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#myOrders").addClass("active").siblings().removeClass("active");
+			});
+		</script>
+	</head>
+	<body>
+	{include file="nav.html"}
+	<br>
+	<br>
+	<br>
+
+	<div calss="divOrdersWrap">
+
+		{foreach item=order from=$orders}
+		<div class="panel panel-warning">
+		  <div class="panel-heading">
+		  	<div class="row">
+			  <div class="col-md-3">
+			  	{$order.buyfrom}
+			  </div>
+			  <div class="col-md-3">
+			  	金额：￥{$order.money}
+			  </div>
+			  <div class="col-md-3">
+			  	时间：{$order.timeline}
+			  </div>
+			  <div class="btnAdd col-md-3">
+			  	<button class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">添加成员</button>
+			  </div>
+		  	</div>
+		  </div>
+		  <div class="panel-body">
+
+		      {foreach item=aa from=$order.items}
+		      	{if $aa neq null}
+		      		<div class="item row">
+				  	<div class="col-md-2">{$aa.name}</div>
+				  	<div class="col-md-2">{$aa.foodname}</div>
+				  	<div class="col-md-2">￥{$aa.oprice}</div>
+				  	<div class="col-md-2">￥{$aa.tprice}</div>
+				  	<div class="col-md-2">
+				  		<button class="btn btn-primary btn-xs">确认收钱</button>
+				  	</div>
+				  	<div class="col-md-2">
+				  		<button class="btn btn-default btn-xs">删除</button>
+				  	</div>
+				  	</div>
+		    	{/if}
+			  {/foreach}
+
+		  </div>
+		</div>
+		{foreachelse}
+			没有订单！
+		{/foreach}
+	</div>
+
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+	      </div>
+	      <div class="modal-body">
+	        <form>
+	        	<div class="form-group">
+				    <label for="restuarant">商家</label>
+				    <input name="buyfrom" type="text" class="form-control" id="restuarant" placeholder="商家">
+				  </div>
+				  <div class="form-group">
+				    <label for="money">金额</label>
+				    <div class="input-group">
+					    <div class="input-group-addon">$</div>
+					    <input name="money" type="number" class="form-control" id="momey" placeholder="金额">
+				    </div>
+				  </div>
+				  <div class="form-group divSelector">
+				    <label for="money">成员</label>
+				    <div class="input-group selector">
+					    <select class="form-control">
+				          <option>cow</option>
+				          <option>bull</option>
+						  <option>cccccc</option>
+				          <option class="get-class" disabled>ox</option>
+				        </select>
+				    </div>
+				  </div>
+	        </form>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-primary">Save changes</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+
+	</body>
+</html>

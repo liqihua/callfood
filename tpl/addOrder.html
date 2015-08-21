@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="content-type" type="text/html;charset=utf-8"/>
+		<link rel="stylesheet" type="text/css" href="data/bootstrap/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="data/bootstrap/css/bootstrap-theme.css"/>
+		<link rel="stylesheet" type="text/css" href="data/css/addOrder.css"/>
+		<script type="text/javascript" src="data/bootstrap/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="data/bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="data/laydate/WdatePicker.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#addOrder").addClass("active").siblings().removeClass("active");
+			});
+		</script>
+	</head>
+	<body>
+	{include file="nav.html"}
+	<br>
+	<br>
+	<br>
+	<div class="divAddOrderWrap">
+		<div class="divAddOrder">
+			<form action="index.php?controller=order&method=add" method="post">
+			  <div class="form-group">
+			    <label for="restuarant">商家</label>
+			    <input name="buyfrom" type="text" class="form-control" id="restuarant" placeholder="商家">
+			  </div>
+			  <br>
+			  <div class="form-group">
+			    <label for="money">金额</label>
+			    <div class="input-group">
+				    <div class="input-group-addon">$</div>
+				    <input name="money" type="number" class="form-control" id="momey" placeholder="金额">
+			    </div>
+			  </div>
+			  <br>
+			  <div class="form-group">
+			    <label for="timeline">时间</label>
+			    <input name="timeline" onclick="WdatePicker()" type="text" class="form-control" id="timeline" placeholder="时间">
+			  </div>
+			  <br>
+			  <button type="submit" class="btn btn-primary btn-lg">添加</button>
+			</form>
+		</div>
+	</div>
+	</body>
+</html>

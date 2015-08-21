@@ -1,0 +1,28 @@
+<link rel="stylesheet" type="text/css" href="data/css/nav.css"/>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.php?controller=index&method=index">蹭单吧</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul id="nav"class="nav navbar-nav">
+        <li id="myItems">
+	        <a href="index.php?controller=index&method=index">我的蹭单</a>
+        </li>
+        <li id="myOrders">
+        	<a href="index.php?controller=order&method=index">我的订单</a>
+        </li>
+        <li id="addOrder">
+        	<a href="index.php?controller=order&method=addOrder">添加订单</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<script type='text/javascript'>
+	$(document).ready(function(){
+		$("#nav li").click(function(){
+			$(this).addClass("active").siblings().removeClass("active");
+		});
+	});
+</script>
