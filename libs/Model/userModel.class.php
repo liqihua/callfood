@@ -47,6 +47,10 @@ class userModel{
 		}	
 	}
 
+	function logout(){
+		unset($_SESSION['user']);
+	}
+
 
 	function findUidByName($name){
 		$sql = "select id from " . $this->_table . " where name='" . $name . "'";
@@ -69,7 +73,7 @@ class userModel{
 		$peos = DB::findAll($sql);
 		return $peos;
 	}
-	
+
 }
 
 

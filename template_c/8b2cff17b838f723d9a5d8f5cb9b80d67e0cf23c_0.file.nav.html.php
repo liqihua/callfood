@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-08-21 10:44:36
+<?php /* Smarty version 3.1.27, created on 2015-08-23 18:14:22
          compiled from "tpl\nav.html" */ ?>
 <?php
-/*%%SmartyHeaderCode:3170155d69094efc687_92279992%%*/
+/*%%SmartyHeaderCode:998955d99cfec69564_45090567%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8b2cff17b838f723d9a5d8f5cb9b80d67e0cf23c' => 
     array (
       0 => 'tpl\\nav.html',
-      1 => 1440124798,
+      1 => 1440324765,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '3170155d69094efc687_92279992',
+  'nocache_hash' => '998955d99cfec69564_45090567',
+  'variables' => 
+  array (
+    'user' => 0,
+  ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_55d69094f00501_12031676',
+  'unifunc' => 'content_55d99cfecb38e1_51696832',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_55d69094f00501_12031676')) {
-function content_55d69094f00501_12031676 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_55d99cfecb38e1_51696832')) {
+function content_55d99cfecb38e1_51696832 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '3170155d69094efc687_92279992';
+$_smarty_tpl->properties['nocache_hash'] = '998955d99cfec69564_45090567';
 ?>
 <link rel="stylesheet" type="text/css" href="data/css/nav.css"/>
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -42,6 +46,11 @@ $_smarty_tpl->properties['nocache_hash'] = '3170155d69094efc687_92279992';
         	<a href="index.php?controller=order&method=addOrder">添加订单</a>
         </li>
       </ul>
+      <div class="divLogin">
+        <?php echo $_smarty_tpl->tpl_vars['user']->value;?>
+&nbsp;&nbsp;&nbsp;
+        <a class="btn btn-default btn-xs" href="index.php?controller=user&method=logout">退出</a>
+      </div>
     </div>
   </div>
 </nav>

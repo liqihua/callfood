@@ -17,6 +17,76 @@
 	<br>
 	<br>
 	<br>
-	index.html
+
+	<div class="panel panel-info divMyItem">
+	  <div class="panel-heading">
+	  	<div class="row">
+			<div class="col-md-2">
+			&nbsp;&nbsp;&nbsp;&nbsp;食品名称
+			</div>
+			<div class="col-md-2">
+			&nbsp;&nbsp;&nbsp;商家名称
+			</div>
+			<div class="col-md-1">
+			&nbsp;&nbsp;原价
+			</div>
+			<div class="col-md-1">
+			&nbsp;实价
+			</div>
+			<div class="col-md-3 textCenter">
+			时间&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</div>
+			<div class="col-md-2">
+			支付人
+			</div>
+			<div class="col-md-1">
+			状态
+			</div>
+		</div>
+	  </div>
+
+	  <div class="panel-body">
+	  
+	{foreach item=myItem from=$myItems}
+		{if $myItem.status eq 1}
+			<div class="alert alert-success divItem" role="alert">
+		{else}
+			<div class="alert alert-danger divItem" role="alert">
+		{/if}
+		    <div class="row">
+				<div class="col-md-2">
+					{$myItem.foodname}
+				</div>
+				<div class="col-md-2">
+					{$myItem.buyfrom}
+				</div>
+				<div class="col-md-1">
+					￥{$myItem.oprice}
+				</div>
+				<div class="col-md-1">
+					￥{$myItem.tprice}
+				</div>
+				<div class="col-md-3">
+					{$myItem.timeline|date_format:"D Y-m-d H:i:s"}
+				</div>
+				<div class="col-md-2">
+					&nbsp;&nbsp;{$myItem.name}
+				</div>
+				<div class="col-md-1">
+					{if $myItem.status eq 1}
+						<span class="label label-success">已付款</span>
+					{else}
+						<span class="label label-danger">未付款</span>
+					{/if}
+				</div>
+			</div>
+		</div>
+		{/foreach}
+
+
+
+	  </div>
+
+	</div>
 	</body>
 </html>

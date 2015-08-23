@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-08-23 14:49:31
+<?php /* Smarty version 3.1.27, created on 2015-08-23 18:14:44
          compiled from "tpl\addOrder.html" */ ?>
 <?php
-/*%%SmartyHeaderCode:2096355d96cfb1ba926_26252738%%*/
+/*%%SmartyHeaderCode:2440455d99d14ec9ee8_73274085%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '335c899a41ff7c880cee00e2b75b5a4565e1724d' => 
     array (
       0 => 'tpl\\addOrder.html',
-      1 => 1440312570,
+      1 => 1440323939,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2096355d96cfb1ba926_26252738',
+  'nocache_hash' => '2440455d99d14ec9ee8_73274085',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_55d96cfb1fcfa3_47461262',
+  'unifunc' => 'content_55d99d14f0c568_73711102',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_55d96cfb1fcfa3_47461262')) {
-function content_55d96cfb1fcfa3_47461262 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_55d99d14f0c568_73711102')) {
+function content_55d99d14f0c568_73711102 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '2096355d96cfb1ba926_26252738';
+$_smarty_tpl->properties['nocache_hash'] = '2440455d99d14ec9ee8_73274085';
 ?>
 <!doctype html>
 <html>
@@ -55,31 +55,6 @@ $_smarty_tpl->properties['nocache_hash'] = '2096355d96cfb1ba926_26252738';
 	<br>
 	<br>
 	<br>
-	<!-- <div class="divAddOrderWrap">
-		<div class="divAddOrder">
-			<form action="index.php?controller=order&method=add" method="post">
-			  <div class="form-group">
-			    <label for="restuarant">商家</label>
-			    <input name="buyfrom" type="text" class="form-control" id="restuarant" placeholder="商家">
-			  </div>
-			  <br>
-			  <div class="form-group">
-			    <label for="money">金额</label>
-			    <div class="input-group">
-				    <div class="input-group-addon">$</div>
-				    <input name="money" type="number" class="form-control" id="momey" placeholder="金额">
-			    </div>
-			  </div>
-			  <br>
-			  <div class="form-group">
-			    <label for="timeline">时间</label>
-			    <input name="timeline" onclick="WdatePicker()" type="text" class="form-control" id="timeline" placeholder="时间">
-			  </div>
-			  <br>
-			  <button type="submit" class="btn btn-primary btn-lg">添加</button>
-			</form>
-		</div>
-	</div> -->
 
 	<div class="panel panel-info divWrap">
 	  <div class="panel-heading">添加订单</div>

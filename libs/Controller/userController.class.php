@@ -14,9 +14,6 @@ class userController{
 		$obj->regist();
 	}
 
-
-
-
 	function login(){
 		if(empty($_POST)){
 			VIEW::display('login.html');
@@ -29,10 +26,16 @@ class userController{
 		$obj = M('user');
 		$res = $obj->login();
 		if($res){
-			VIEW::display('index.html');
+			C('index','index');
 		}else{
 			showmessage("用户名或密码错误！","index.php?controller=user&method=login");
 		}
+	}
+
+	function logout(){
+		$objUser = M('user');
+		$objUser->logout();
+		C('index','index');
 	}
 }
 

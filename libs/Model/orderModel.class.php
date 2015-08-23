@@ -118,6 +118,28 @@ class orderModel{
 	}
 
 
+	function findItems(){
+		$sql = "select a.*,b.buyfrom,b.timeline,c.name from items a,orders b,users c where a.oid=b.id and c.id=b.payid and c.name != '".$_SESSION['user']."' order by timeline desc";
+		$arr = DB::findAll($sql);
+		return $arr;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 

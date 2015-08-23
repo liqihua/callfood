@@ -2,16 +2,22 @@
 class indexController{
 
 	function index(){
-		/*$newsobj = M("news");
-		$data = $newsobj->get_news_list();
-		VIEW::assign(array('data' => $data));*/
 		if(!isset($_SESSION['user']) || (empty($_SESSION['user']))){
-			var_dump($_SESSION['user']);
 			VIEW::display('login.html');
 		}else{
+			$myItems = $this->findItems();
+			VIEW::assign(array('user' => $_SESSION['user'],'myItems' => $myItems));
 			VIEW::display('index.html');
 		}
 	}
+
+
+	function findItems(){
+		$objOrder = M('order');
+		$arr = $objOrder->findItems();
+		return $arr;
+	}
+	
 
 	
 

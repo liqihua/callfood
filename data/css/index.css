@@ -1,3 +1,13 @@
 body{
 	background: #F7F7F9;
 }
+.divItem{
+	height:40px;
+}
+.divMyItem{
+	width:900px;
+	margin:20px auto;
+}
+.textCenter{
+	text-align: center;
+}

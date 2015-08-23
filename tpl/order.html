@@ -62,7 +62,7 @@
 			  	金额：￥{$order.money}
 			  </div>
 			  <div class="col-md-4">
-			  	时间：{$order.timeline}
+			  	时间：{$order.timeline|date_format:"D Y-m-d H:i:s"}
 			  </div>
 			  <div id="{$order.id}" class="col-md-2">
 			  	<button class="btn btn-info btn-sm btnAddPeo" data-toggle="modal" data-target="#myModal">添加成员</button>

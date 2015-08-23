@@ -2,6 +2,11 @@
 class orderController{
 
 	function index(){
+		if(!isset($_SESSION['user']) || (empty($_SESSION['user']))){
+			C('index','index');
+		}else{
+			VIEW::assign(array('user' => $_SESSION['user']));
+		}
 		$objOrder = M('order');
 		$data = $objOrder->findOrders();
 		$objUser = M('user');
@@ -14,6 +19,11 @@ class orderController{
 	}
 
 	function addOrder(){
+		if(!isset($_SESSION['user']) || (empty($_SESSION['user']))){
+			C('index','index');
+		}else{
+			VIEW::assign(array('user' => $_SESSION['user']));
+		}
 		VIEW::display('addOrder.html');
 	}
 
@@ -68,6 +78,22 @@ class orderController{
 		$objOrder->getMoney($id);
 		$this->index();
 	}
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
