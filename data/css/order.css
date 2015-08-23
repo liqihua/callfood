@@ -5,10 +5,11 @@
 .mytable{
 	width:100%;
 }
-.btnAdd{
-	text-align: right;
+.btnCenter{
+	text-align: center;
 }
 .item{margin-top: 10px;}
 .selector{
 	width:100%;
 }
+

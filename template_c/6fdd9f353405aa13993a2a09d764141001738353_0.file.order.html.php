@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-08-21 17:34:50
+<?php /* Smarty version 3.1.27, created on 2015-08-23 14:35:33
          compiled from "tpl\order.html" */ ?>
 <?php
-/*%%SmartyHeaderCode:1108455d6f0ba5908b1_30565052%%*/
+/*%%SmartyHeaderCode:1117855d969b56f8c20_49815771%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,26 +9,28 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6fdd9f353405aa13993a2a09d764141001738353' => 
     array (
       0 => 'tpl\\order.html',
-      1 => 1440149677,
+      1 => 1440311732,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1108455d6f0ba5908b1_30565052',
+  'nocache_hash' => '1117855d969b56f8c20_49815771',
   'variables' => 
   array (
     'orders' => 0,
     'order' => 0,
     'aa' => 0,
+    'peos' => 0,
+    'peo' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_55d6f0ba5fa039_98330921',
+  'unifunc' => 'content_55d969b57817a2_91579273',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_55d6f0ba5fa039_98330921')) {
-function content_55d6f0ba5fa039_98330921 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_55d969b57817a2_91579273')) {
+function content_55d969b57817a2_91579273 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1108455d6f0ba5908b1_30565052';
+$_smarty_tpl->properties['nocache_hash'] = '1117855d969b56f8c20_49815771';
 ?>
 <html>
 	<head>
@@ -46,7 +48,33 @@ $_smarty_tpl->properties['nocache_hash'] = '1108455d6f0ba5908b1_30565052';
  type="text/javascript">
 			$(document).ready(function(){
 				$("#myOrders").addClass("active").siblings().removeClass("active");
+				$(".btnAddPeo").click(function(){
+					var oid = $(this).parent().attr("id");
+					$("#oid").attr("value",oid);
+				});
 			});
+
+			function delPeo(id){
+				var del = confirm("你确定要删除他？");
+				if(del){
+					window.location.href="index.php?controller=order&method=delPeo&id="+id;
+				}
+			}
+
+			function delOrder(id){
+				var del = confirm("你确定要删除此订单？");
+				if(del){
+					window.location.href="index.php?controller=order&method=delOrder&id="+id;
+				}
+			}
+
+			function gitMoney(id){
+				var get = confirm("确定已收到对方付款？注意：一旦确定，不能修改！");
+				if(get){
+					window.location.href="index.php?controller=order&method=getMoney&id="+id;
+				}
+			}
+
 		<?php echo '</script'; ?>
 >
 	</head>
@@ -71,28 +99,37 @@ foreach ($_from as $_smarty_tpl->tpl_vars['order']->value) {
 $_smarty_tpl->tpl_vars['order']->_loop = true;
 $foreach_order_Sav = $_smarty_tpl->tpl_vars['order'];
 ?>
-		<div class="panel panel-warning">
+
+		<?php if ($_smarty_tpl->tpl_vars['order']->value['status'] == 1) {?>
+		<div class="panel panel-success">
+		<?php } else { ?>
+		<div class="panel panel-danger">
+		<?php }?>
 		  <div class="panel-heading">
 		  	<div class="row">
-			  <div class="col-md-3">
+			  <div class="col-md-2">
 			  	<?php echo $_smarty_tpl->tpl_vars['order']->value['buyfrom'];?>
 
 			  </div>
-			  <div class="col-md-3">
+			  <div class="col-md-2">
 			  	金额：￥<?php echo $_smarty_tpl->tpl_vars['order']->value['money'];?>
 
 			  </div>
-			  <div class="col-md-3">
+			  <div class="col-md-4">
 			  	时间：<?php echo $_smarty_tpl->tpl_vars['order']->value['timeline'];?>
 
 			  </div>
-			  <div class="btnAdd col-md-3">
-			  	<button class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">添加成员</button>
+			  <div id="<?php echo $_smarty_tpl->tpl_vars['order']->value['id'];?>
+" class="col-md-2">
+			  	<button class="btn btn-info btn-sm btnAddPeo" data-toggle="modal" data-target="#myModal">添加成员</button>
+			  </div>
+			  <div class="btnCenter col-md-2">
+			  	<button onclick="delOrder(<?php echo $_smarty_tpl->tpl_vars['order']->value['id'];?>
+)" class="btn btn-default btn-sm">删除订单</button>
 			  </div>
 		  	</div>
 		  </div>
 		  <div class="panel-body">
-
 		      <?php
 $_from = $_smarty_tpl->tpl_vars['order']->value['items'];
 if (!is_array($_from) && !is_object($_from)) {
@@ -115,10 +152,16 @@ $foreach_aa_Sav = $_smarty_tpl->tpl_vars['aa'];
 				  	<div class="col-md-2">￥<?php echo $_smarty_tpl->tpl_vars['aa']->value['tprice'];?>
 </div>
 				  	<div class="col-md-2">
-				  		<button class="btn btn-primary btn-xs">确认收钱</button>
+				  		<?php if ($_smarty_tpl->tpl_vars['aa']->value['status'] == 0) {?>
+				  			<button onclick="gitMoney(<?php echo $_smarty_tpl->tpl_vars['aa']->value['id'];?>
+)" class="btn btn-danger btn-xs">确认收钱</button>
+				  		<?php } else { ?>
+				  			<span class="label label-success">&nbsp;已收&nbsp;</span>
+				  		<?php }?>
 				  	</div>
-				  	<div class="col-md-2">
-				  		<button class="btn btn-default btn-xs">删除</button>
+				  	<div class="col-md-2 btnCenter">
+				  		<button class="btn btn-default btn-xs" onclick="delPeo(<?php echo $_smarty_tpl->tpl_vars['aa']->value['id'];?>
+)">删除成员</button>
 				  	</div>
 				  	</div>
 		    	<?php }?>
@@ -126,7 +169,6 @@ $foreach_aa_Sav = $_smarty_tpl->tpl_vars['aa'];
 $_smarty_tpl->tpl_vars['aa'] = $foreach_aa_Sav;
 }
 ?>
-
 		  </div>
 		</div>
 		<?php
@@ -140,46 +182,72 @@ if (!$_smarty_tpl->tpl_vars['order']->_loop) {
 ?>
 	</div>
 
+
+
+
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	  <div class="modal-dialog" role="document">
+	  	<form action="index.php?controller=order&method=addItem" method="post">
 	    <div class="modal-content">
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 	        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
 	      </div>
 	      <div class="modal-body">
-	        <form>
-	        	<div class="form-group">
-				    <label for="restuarant">商家</label>
-				    <input name="buyfrom" type="text" class="form-control" id="restuarant" placeholder="商家">
-				  </div>
-				  <div class="form-group">
-				    <label for="money">金额</label>
-				    <div class="input-group">
-					    <div class="input-group-addon">$</div>
-					    <input name="money" type="number" class="form-control" id="momey" placeholder="金额">
-				    </div>
-				  </div>
-				  <div class="form-group divSelector">
-				    <label for="money">成员</label>
+	        
+	        	<input id="oid" type="hidden" name="oid" value=""/>
+	        	<div class="form-group divSelector">
+				    <label for="buyid">蹭单人</label>
 				    <div class="input-group selector">
-					    <select class="form-control">
-				          <option>cow</option>
-				          <option>bull</option>
-						  <option>cccccc</option>
-				          <option class="get-class" disabled>ox</option>
+					    <select id="buyid" name="buyid" class="form-control">
+					    	<?php
+$_from = $_smarty_tpl->tpl_vars['peos']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['peo'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['peo']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['peo']->value) {
+$_smarty_tpl->tpl_vars['peo']->_loop = true;
+$foreach_peo_Sav = $_smarty_tpl->tpl_vars['peo'];
+?>
+					    		<option value="<?php echo $_smarty_tpl->tpl_vars['peo']->value['id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['peo']->value['name'];?>
+</option>
+					    	<?php
+$_smarty_tpl->tpl_vars['peo'] = $foreach_peo_Sav;
+}
+?>
 				        </select>
 				    </div>
-				  </div>
-	        </form>
+				</div>
+	        	<div class="form-group">
+				    <label for="foodname">食品名称</label>
+				    <input name="foodname" type="text" class="form-control" id="foodname" placeholder="食品名称">
+				</div>
+				<div class="form-group">
+				    <label for="oprice">原价</label>
+				    <div class="input-group">
+					    <div class="input-group-addon">$</div>
+					    <input name="oprice" type="number" class="form-control" id="oprice" placeholder="原价">
+				    </div>
+				</div>
+				<div class="form-group">
+				    <label for="tprice">实价</label>
+				    <div class="input-group">
+					    <div class="input-group-addon">$</div>
+					    <input name="tprice" type="number" class="form-control" id="tprice" placeholder="实价">
+				    </div>
+				</div>
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        <button type="button" class="btn btn-primary">Save changes</button>
+	        <button type="submit" class="btn btn-primary">Save</button>
 	      </div>
+	      </div>
+	      </form>
 	    </div>
 	  </div>
-	</div>
 
 
 	</body>

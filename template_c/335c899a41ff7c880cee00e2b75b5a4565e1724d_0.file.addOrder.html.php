@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-08-21 16:49:10
+<?php /* Smarty version 3.1.27, created on 2015-08-23 14:49:31
          compiled from "tpl\addOrder.html" */ ?>
 <?php
-/*%%SmartyHeaderCode:1653655d6e60650b846_44596291%%*/
+/*%%SmartyHeaderCode:2096355d96cfb1ba926_26252738%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '335c899a41ff7c880cee00e2b75b5a4565e1724d' => 
     array (
       0 => 'tpl\\addOrder.html',
-      1 => 1440146949,
+      1 => 1440312570,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1653655d6e60650b846_44596291',
+  'nocache_hash' => '2096355d96cfb1ba926_26252738',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_55d6e606555bc0_95543363',
+  'unifunc' => 'content_55d96cfb1fcfa3_47461262',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_55d6e606555bc0_95543363')) {
-function content_55d6e606555bc0_95543363 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_55d96cfb1fcfa3_47461262')) {
+function content_55d96cfb1fcfa3_47461262 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1653655d6e60650b846_44596291';
+$_smarty_tpl->properties['nocache_hash'] = '2096355d96cfb1ba926_26252738';
 ?>
 <!doctype html>
 <html>
@@ -55,7 +55,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1653655d6e60650b846_44596291';
 	<br>
 	<br>
 	<br>
-	<div class="divAddOrderWrap">
+	<!-- <div class="divAddOrderWrap">
 		<div class="divAddOrder">
 			<form action="index.php?controller=order&method=add" method="post">
 			  <div class="form-group">
@@ -79,7 +79,37 @@ $_smarty_tpl->properties['nocache_hash'] = '1653655d6e60650b846_44596291';
 			  <button type="submit" class="btn btn-primary btn-lg">添加</button>
 			</form>
 		</div>
+	</div> -->
+
+	<div class="panel panel-info divWrap">
+	  <div class="panel-heading">添加订单</div>
+	  <div class="panel-body">
+	  <div class="formWrap">
+	   <form action="index.php?controller=order&method=add" method="post">
+			  <div class="form-group">
+			    <label for="restuarant">商家</label>
+			    <input name="buyfrom" type="text" class="form-control" id="restuarant" placeholder="商家">
+			  </div>
+			  <br>
+			  <div class="form-group">
+			    <label for="money">金额</label>
+			    <div class="input-group">
+				    <div class="input-group-addon">$</div>
+				    <input name="money" type="number" class="form-control" id="momey" placeholder="金额">
+			    </div>
+			  </div>
+			  <br>
+			  <div class="form-group">
+			    <label for="timeline">时间</label>
+			    <input name="timeline" onclick="WdatePicker()" type="text" class="form-control" id="timeline" placeholder="时间">
+			  </div>
+			  <br>
+			  <button type="submit" class="btn btn-primary btn-lg">Saves</button>
+			</form>
+			</div>
+	  </div>
 	</div>
+
 	</body>
 </html><?php }
 }

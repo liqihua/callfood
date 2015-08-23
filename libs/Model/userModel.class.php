@@ -63,6 +63,12 @@ class userModel{
 		$name = DB::findOne($sql);
 		return $name;
 	}
+
+	function findAllUserAndId(){
+		$sql = "select id,name from " . $this->_table;
+		$peos = DB::findAll($sql);
+		return $peos;
+	}
 	
 }
 
