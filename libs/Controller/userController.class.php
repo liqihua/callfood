@@ -37,6 +37,18 @@ class userController{
 		$objUser->logout();
 		C('index','index');
 	}
+
+	function updateInfo(){
+		$objUser = M('user');
+		$objUser->updateInfo();
+		unset($_SESSION['user']);
+		C('index','index');
+	}
+
+
+
+
+
 }
 
 ?>

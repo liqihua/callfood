@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-08-21 08:32:58
+<?php /* Smarty version 3.1.27, created on 2015-08-24 11:17:21
          compiled from "tpl\login.html" */ ?>
 <?php
-/*%%SmartyHeaderCode:1066755d671ba66f9e6_37332146%%*/
+/*%%SmartyHeaderCode:2335155da8cc1789da1_72338202%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'effe9b8452f05a59c1b9d15c345a17d39d8de374' => 
     array (
       0 => 'tpl\\login.html',
-      1 => 1440116685,
+      1 => 1440385998,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1066755d671ba66f9e6_37332146',
+  'nocache_hash' => '2335155da8cc1789da1_72338202',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_55d671ba6ae1e2_02608398',
+  'unifunc' => 'content_55da8cc17d02b4_07238702',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_55d671ba6ae1e2_02608398')) {
-function content_55d671ba6ae1e2_02608398 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_55da8cc17d02b4_07238702')) {
+function content_55da8cc17d02b4_07238702 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1066755d671ba66f9e6_37332146';
+$_smarty_tpl->properties['nocache_hash'] = '2335155da8cc1789da1_72338202';
 ?>
 <html>
 	<head>
@@ -102,7 +102,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1066755d671ba66f9e6_37332146';
 				  	</div>
 				  	<div class="form-group">
 					    <label for="name">Your Name</label>
-					    <input name="name" type="text" class="form-control" id="name" placeholder="Your name">
+					    <input name="name" type="text" class="form-control" id="name" placeholder="真实姓名">
 				  	</div>
 				  	<div class="row">
 				  		<span class="col-xs-1"></span>

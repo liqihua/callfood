@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-08-23 15:00:48
+<?php /* Smarty version 3.1.27, created on 2015-08-24 11:39:39
          compiled from "tpl\order.html" */ ?>
 <?php
-/*%%SmartyHeaderCode:1884555d96fa09595a1_44972681%%*/
+/*%%SmartyHeaderCode:412155da91fbe67c20_36312759%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6fdd9f353405aa13993a2a09d764141001738353' => 
     array (
       0 => 'tpl\\order.html',
-      1 => 1440313247,
+      1 => 1440387557,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1884555d96fa09595a1_44972681',
+  'nocache_hash' => '412155da91fbe67c20_36312759',
   'variables' => 
   array (
     'orders' => 0,
@@ -24,14 +24,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_55d96fa09f1b20_85599160',
+  'unifunc' => 'content_55da91fbf259c6_62325795',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_55d96fa09f1b20_85599160')) {
-function content_55d96fa09f1b20_85599160 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_55da91fbf259c6_62325795')) {
+function content_55da91fbf259c6_62325795 ($_smarty_tpl) {
 if (!is_callable('smarty_modifier_date_format')) require_once 'D:\\liqihua\\apache\\htdocs\\callfood\\framework\\libs\\view\\Smarty\\plugins\\modifier.date_format.php';
 
-$_smarty_tpl->properties['nocache_hash'] = '1884555d96fa09595a1_44972681';
+$_smarty_tpl->properties['nocache_hash'] = '412155da91fbe67c20_36312759';
 ?>
 <html>
 	<head>
@@ -192,7 +192,7 @@ if (!$_smarty_tpl->tpl_vars['order']->_loop) {
 	    <div class="modal-content">
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+	        <h4 class="modal-title" id="myModalLabel">添加订单成员</h4>
 	      </div>
 	      <div class="modal-body">
 	        

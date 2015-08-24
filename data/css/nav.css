@@ -9,3 +9,7 @@ body{
 	height:30px;
 	color:#FFFFFF;
 }
+.aName,.aName:hover,.aName:visited{
+	text-decoration: none;
+	color:#FFFFFF;
+}

@@ -18,11 +18,10 @@ class userModel{
 			'password' => $password,
 			'name' => $name
 			);
-		$sql = "select * from " . $this->_table . " where username ='" . $username . "'";
-		//$has = DB::query($sql);
-		$has = DB::findOne($sql);
-		if($has){
-			showmessage("该邮箱已被注册！请重新注册！","index.php?controller=user&method=login");
+		$sql = "select id from " . $this->_table . " where username ='" . $username . "' or name='" . $name . "'";
+		$exist = DB::findOne($sql);
+		if($exist){
+			showmessage("该邮箱或姓名已被注册！请重新注册！","index.php?controller=user&method=login");
 		}else{
 			DB::insert($this->_table,$data);
 			showmessage("注册成功！请登录！","index.php?controller=user&method=login");
@@ -73,6 +72,28 @@ class userModel{
 		$peos = DB::findAll($sql);
 		return $peos;
 	}
+
+
+	function updateInfo(){
+		foreach ($_POST as $v) {
+			if(empty($v)){
+				showmessage("数据不完整！","index.php?controller=index&method=index");
+			}
+		}
+		extract($_POST);
+		$sql_name = "select id from " . $this->_table . " where name='" . $name . "'";
+		$exist = DB::findOne($sql_name);
+		if($exist){
+			showmessage("该名字已被占用，请更换！","index.php?controller=index&method=index");
+		}
+		$data = array(
+			'name' => $name,
+			'password' => $password
+			);
+		DB::update($this->_table,$data,"name='".$_SESSION['user']."'");
+	}
+
+
 
 }
 

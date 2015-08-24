@@ -119,8 +119,14 @@ class orderModel{
 
 
 	function findItems(){
-		$sql = "select a.*,b.buyfrom,b.timeline,c.name from items a,orders b,users c where a.oid=b.id and c.id=b.payid and c.name != '".$_SESSION['user']."' order by timeline desc";
+		$sql_buyid = "select id from users where name='" . $_SESSION['user'] . "'";
+		$buyid_arr = DB::findOne($sql_buyid);
+		$buyid = $buyid_arr['id'];
+		$sql = "select a.*,b.buyfrom,b.timeline,c.name from items a,orders b,users c where a.oid=b.id and c.id=b.payid and b.payid != ".$buyid." and a.buyid=" . $buyid . " order by timeline desc";
 		$arr = DB::findAll($sql);
+		/*foreach($arr as $v){
+			var_dump($v);echo "<hr>";
+		}exit;*/
 		return $arr;
 	}
 
