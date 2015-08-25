@@ -62,8 +62,8 @@ class orderModel{
 			}
 		}
 		extract($_POST);
-		$oprice = intval($oprice);
-		$tprice = intval($tprice);
+		$oprice = floatval($oprice);
+		$tprice = floatval($tprice);
 		if((!$oprice) || (!$tprice)){
 			showmessage("价格输入有误！","index.php?controller=order&method=index");
 		}

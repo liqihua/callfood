@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-08-24 11:39:39
+<?php /* Smarty version 3.1.27, created on 2015-08-25 10:57:37
          compiled from "tpl\order.html" */ ?>
 <?php
-/*%%SmartyHeaderCode:412155da91fbe67c20_36312759%%*/
+/*%%SmartyHeaderCode:1948855dbd9a16776c3_41745310%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6fdd9f353405aa13993a2a09d764141001738353' => 
     array (
       0 => 'tpl\\order.html',
-      1 => 1440387557,
+      1 => 1440471453,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '412155da91fbe67c20_36312759',
+  'nocache_hash' => '1948855dbd9a16776c3_41745310',
   'variables' => 
   array (
     'orders' => 0,
@@ -24,14 +24,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_55da91fbf259c6_62325795',
+  'unifunc' => 'content_55dbd9a176b2b0_01651436',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_55da91fbf259c6_62325795')) {
-function content_55da91fbf259c6_62325795 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_55dbd9a176b2b0_01651436')) {
+function content_55dbd9a176b2b0_01651436 ($_smarty_tpl) {
 if (!is_callable('smarty_modifier_date_format')) require_once 'D:\\liqihua\\apache\\htdocs\\callfood\\framework\\libs\\view\\Smarty\\plugins\\modifier.date_format.php';
 
-$_smarty_tpl->properties['nocache_hash'] = '412155da91fbe67c20_36312759';
+$_smarty_tpl->properties['nocache_hash'] = '1948855dbd9a16776c3_41745310';
 ?>
 <html>
 	<head>
@@ -230,14 +230,14 @@ $_smarty_tpl->tpl_vars['peo'] = $foreach_peo_Sav;
 				    <label for="oprice">原价</label>
 				    <div class="input-group">
 					    <div class="input-group-addon">$</div>
-					    <input name="oprice" type="number" class="form-control" id="oprice" placeholder="原价">
+					    <input name="oprice" type="text" class="form-control" id="oprice" placeholder="原价">
 				    </div>
 				</div>
 				<div class="form-group">
 				    <label for="tprice">实价</label>
 				    <div class="input-group">
 					    <div class="input-group-addon">$</div>
-					    <input name="tprice" type="number" class="form-control" id="tprice" placeholder="实价">
+					    <input name="tprice" type="text" class="form-control" id="tprice" placeholder="实价">
 				    </div>
 				</div>
 	      </div>
