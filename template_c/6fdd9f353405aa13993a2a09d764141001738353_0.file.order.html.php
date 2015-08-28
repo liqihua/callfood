@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-08-25 10:57:37
+<?php /* Smarty version 3.1.27, created on 2015-08-28 02:47:29
          compiled from "tpl\order.html" */ ?>
 <?php
-/*%%SmartyHeaderCode:1948855dbd9a16776c3_41745310%%*/
+/*%%SmartyHeaderCode:1354455dfcbc12d9087_08390878%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6fdd9f353405aa13993a2a09d764141001738353' => 
     array (
       0 => 'tpl\\order.html',
-      1 => 1440471453,
+      1 => 1440728213,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1948855dbd9a16776c3_41745310',
+  'nocache_hash' => '1354455dfcbc12d9087_08390878',
   'variables' => 
   array (
     'orders' => 0,
@@ -24,14 +24,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_55dbd9a176b2b0_01651436',
+  'unifunc' => 'content_55dfcbc134a526_24622782',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_55dbd9a176b2b0_01651436')) {
-function content_55dbd9a176b2b0_01651436 ($_smarty_tpl) {
-if (!is_callable('smarty_modifier_date_format')) require_once 'D:\\liqihua\\apache\\htdocs\\callfood\\framework\\libs\\view\\Smarty\\plugins\\modifier.date_format.php';
+if ($_valid && !is_callable('content_55dfcbc134a526_24622782')) {
+function content_55dfcbc134a526_24622782 ($_smarty_tpl) {
+if (!is_callable('smarty_modifier_date_format')) require_once 'D:\\software\\apache\\htdocs\\callfood\\framework\\libs\\view\\Smarty\\plugins\\modifier.date_format.php';
 
-$_smarty_tpl->properties['nocache_hash'] = '1948855dbd9a16776c3_41745310';
+$_smarty_tpl->properties['nocache_hash'] = '1354455dfcbc12d9087_08390878';
 ?>
 <html>
 	<head>
